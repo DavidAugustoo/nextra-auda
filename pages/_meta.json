@@ -1,0 +1,32 @@
+{
+  "index": {
+    "title": "Introdução",
+    "theme": {
+      "footer": false
+    }
+  },
+  "arquitetura": {
+    "title": "Arquitetura Geral",
+    "theme": {
+      "footer": false
+    }
+  },
+  "git": {
+    "title": "Gitlab",
+    "theme": {
+      "footer": false
+    }
+  },
+  "jira": {
+    "title": "Jira",
+    "theme": {
+      "footer": false
+    }
+  },
+  "my-audaces": {
+    "title": "Projeto MyAudaces",
+    "theme": {
+      "footer": false
+    }
+  }
+}

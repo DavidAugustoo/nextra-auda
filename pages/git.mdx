@@ -1,0 +1,91 @@
+import { Steps } from 'nextra/components'
+import { Callout } from 'nextra/components'
+
+
+# Processo de Versionamento de Código com GitLab
+
+## Introdução
+
+Este documento delineia o processo padrão de versionamento de código utilizado em todos os nossos projetos, com o **GitLab** como ferramenta central. Este processo é projetado para garantir um desenvolvimento eficiente, testes abrangentes e implantações seguras em todos os projetos, mantendo a consistência e a qualidade do código.
+
+## Estrutura de Branchs
+
+### Branchs Principais
+
+- **Master**: Esta branch é o reflexo direto do que está em produção. Qualquer código aqui é considerado estável e totalmente testado.
+- **Development**: Serve como um ambiente de pré-produção. Aqui, o código é integrado para testes finais antes de ser promovido à branch master.
+
+### Criação de Novas Branchs
+
+Para cada nova funcionalidade, bug fix ou melhoria:
+
+- Criamos branchs a partir da `development`.
+- Seguimos um padrão estrito de nomenclatura: `tipo/NÚMERO-DA-TAREFA` (ex: `feat/LAUNCHER-329` para funcionalidades, `fix/LAUNCHER-329` para correções).
+- Utilizamos Conventional Commits para uma descrição clara e objetiva das alterações (ex: `feat: novo formulário de cadastro`).
+
+## Conventional Commits
+
+Conventional Commits é uma convenção de nomenclatura para commits que padroniza as mensagens de commit. Isso não apenas facilita a leitura do histórico de commits, mas também auxilia na geração automática de changelogs e na categorização clara das alterações realizadas.
+
+### Tipos de Commits
+
+- **feat**: Para novas funcionalidades que adicionam valor ao projeto.
+- **fix**: Para correções de bugs que melhoram a funcionalidade existente.
+- **docs**: Quando as alterações são exclusivamente em documentação.
+- **style**: Mudanças que não alteram o funcionamento do código (formato, espaçamento).
+- **refactor**: Reorganização do código que não altera funcionalidade ou corrige bugs.
+- **perf**: Melhorias que otimizam o desempenho do código.
+- **test**: Adição ou correção de testes para garantir a robustez do código.
+- **chore**: Atualizações de rotina que não alteram o código do projeto (geralmente configurações).
+
+### Exemplos
+
+- `feat: implementação da autenticação OAuth`.
+- `fix: falha na sincronização de dados`.
+- `docs: guia de contribuição ao projeto atualizado`.
+- `chore: configuração do eslint`.
+
+
+
+## Fluxo de Trabalho
+
+<Steps>
+### Desenvolvimento
+
+Inicia-se com a criação de uma branch específica a partir da branch development para desenvolvimneto da tarefa.
+
+1. Acesse a branch development
+```bash copy
+    git checkout "development"
+    ```
+2. Crie nova branch
+```bash copy
+    git checkout -b "feat/LAUNCHER-342"
+    ```
+
+  
+### Merge para Development
+
+Para facilitar a revisão e os testes do código, deve-se abrir um Merge Request diretamente na plataforma do GitLab, direcionado para a branch `development`. É crucial marcar outros desenvolvedores para o code review, assegurando assim uma avaliação detalhada e colaborativa do trabalho desenvolvido.
+
+![Tutorial merge request no gitlab](https://www.tutorialspoint.com/gitlab/images/merge-request-1.jpg)
+
+### Merge para Master
+
+Somente após uma cuidadosa validação e testes bem-sucedidos na branch development é que o código deve ser mesclado com a branch master. Esse procedimento garante que apenas código rigorosamente verificado e confirmado como estável seja promovido para implantação no ambiente de produção.
+
+![Tutorial merge request no gitlab](https://www.tutorialspoint.com/gitlab/images/merge-request-1.jpg)
+
+
+</Steps>
+
+
+<Callout type="warning" emoji="⚠️"> 
+ Observação Importante: Correção de Bugs em Produção
+ 
+ Caso um bug seja identificado no ambiente de produção, a branch para correção deve ser criada a partir da **master**. Isso evita incluir funcionalidades ou mudanças da branch **development** que ainda estão em fase de testes. Esse cuidado garante que a correção seja feita de forma isolada e segura, mantendo a estabilidade do ambiente de produção.
+</Callout>
+
+## Conclusão
+
+Este processo de versionamento é a espinha dorsal do desenvolvimento de software em nossa organização. Ele assegura a integridade, a qualidade e a consistência do código em todos os nossos projetos. Através da utilização estratégica do GitLab, da organização eficiente de branchs e do emprego de Conventional Commits, estabelecemos um padrão de excelência em nossas práticas de versionamento.

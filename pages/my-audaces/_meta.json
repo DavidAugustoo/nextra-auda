@@ -1,0 +1,20 @@
+{
+  "introducao": {
+    "title": "Introdução",
+    "theme": {
+      "footer": false
+    }
+  },
+  "configuracao": {
+    "title": "Configuração de Ambiente",
+    "theme": {
+      "footer": false
+    }
+  },
+  "deploy": {
+    "title": "Fluxo de Deploy",
+    "theme": {
+      "footer": false
+    }
+  }
+}

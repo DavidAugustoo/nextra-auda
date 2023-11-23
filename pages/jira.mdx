@@ -1,0 +1,38 @@
+# Processo de Gestão de Tarefas no Jira
+
+## Introdução
+
+Este guia detalha o processo de gestão de tarefas no Jira utilizado em nossa organização. Ele foi desenvolvido para proporcionar um fluxo de trabalho claro e eficiente, desde a criação até a conclusão das tarefas, enfatizando a transparência e a colaboração em todas as etapas.
+
+## Fluxo de Trabalho das Tarefas
+
+O ciclo de vida das tarefas no Jira é composto por diversas etapas, cada uma desempenhando um papel fundamental no desenvolvimento:
+
+| **Etapa**          | **Descrição Detalhada** |
+|--------------------|-------------------------|
+| `TAREFA PENDENTE`  | A tarefa aguarda início, não tendo sido atribuída ou iniciada. |
+| `EM ANDAMENTO`     | O Desenvolvedor está ativamente trabalhando na tarefa. |
+| `REABERTA`         | A tarefa foi retomada devido a necessidades adicionais ou ajustes, após feedback de qualquer membro da equipe. |
+| `CODE REVIEW`      | A tarefa está pronta para revisão de código por outros desenvolvedores para garantir qualidade e aderência aos padrões. |
+| `DEPLOY`           | A tarefa aguarda deploy no ambiente de desenvolvimento para testes adicionais e validação. |
+| `DESIGN`           | A tarefa está em processo de validação de design, assegurando a conformidade com os requisitos visuais. |
+| `ACEITAÇÃO`        | A tarefa está em fase de aceitação pelo responsável, garantindo que atenda às expectativas do projeto. |
+| `TESTE FUNCIONAL`  | A tarefa está sendo submetida a testes manuais para verificar funcionalidades específicas. |
+| `DOCUMENTAÇÃO`     | Documentação detalhada da tarefa está sendo preparada ou atualizada. |
+| `CONCLUÍDA`        | A tarefa foi finalizada, incluindo todos os aspectos de desenvolvimento, testes e documentação. |
+| `REJEITADA`        | A tarefa foi eliminada do backlog por não se alinhar mais com as necessidades do projeto. |
+
+## Finalização e Comentários na Tarefa
+
+Ao concluir uma tarefa, é crucial adicionar um comentário detalhando sua implementação. Este comentário deve incluir:
+
+- Cenários de teste realizados.
+- Versão do build em que a implementação foi realizada.
+
+Essas informações são essenciais para proporcionar um histórico claro da tarefa e auxiliar na compreensão e na validação das mudanças implementadas.
+
+## Observações Importantes
+
+- **Criação de Issues**: Incentivamos todos os membros do projeto a criar issues, promovendo a colaboração ativa.
+- **Tratamento de Bugs**: Bugs seguem diretamente para `TESTE FUNCIONAL`, sem necessidade de passar por `ACEITAÇÃO`.
+- **Dependência de Ambiente**: As tarefas devem estar no ambiente de desenvolvimento antes de prosseguirem para fases como DESIGN, TESTE e ACEITAÇÃO, assegurando a validação
